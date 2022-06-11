@@ -59,7 +59,7 @@ file_handler.setLevel(WARNING)
 app.logger.addHandler(file_handler)
 
 app.config['SECRET_KEY'] = 'Key'
-app.permanent_session_lifetime = timedelta(days=5)
+app.permanent_session_lifetime = timedelta(minutes=5)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Biblusi_books.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
