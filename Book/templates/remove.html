@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    Remove
+{% endblock %}
+{% block content %}
+
+<link href="static/style1.css" rel="stylesheet">
+
+<br>
+<h3>წიგნის წაშლა</h3>
+<form method = 'POST'>
+    <div class = 'form-group'>
+         <input type="text" name="book"  placeholder="წიგნის სათაური" >
+    </div>
+    <br>
+    {% with messages = get_flashed_messages(with_categories= True)%}
+        {% for categories,messages in messages %}
+            <p class="{{categories}}">{{messages}}</p>
+        {% endfor %}
+    {% endwith %}
+    <button type="submit" class="btn-btn-primary">წაშალე წიგნი</button>
+</form>
+
+
+
+
+
+{% endblock %}
+
+

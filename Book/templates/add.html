@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link href="static/style1.css" rel="stylesheet">
+
+
+<br>
+
+<h3>წიგნის საიტზე ატვირთვა</h3>
+<form method = 'post'>
+    <div class = 'form-group1'>
+         <input type="number" name="id"  placeholder="წიგნის აიდი" >
+         <input type="text" name="book1"  placeholder="წიგნის სათაური" >
+         <input type="text" name="price"  placeholder="წიგნის ფასი" >
+         <input type="text" name="img_url"  placeholder="სურათის ლინკი" >
+         <input type="text" name="book_url"  placeholder="ბიბლუსის გვერდი" >
+    </div>
+    <button type="submit" class="btn-btn-primary">დაამატე წიგნი</button>
+</form>
+<br>
+{% with messages = get_flashed_messages(with_categories= True)%}
+        {% for categories,messages in messages %}
+            <div style="text-align: center;width: 60%;margin-left: 22%" class="alert alert-{{categories}} alert-dismissible fade show" role="alert">
+  <span>
+      {{messages}}
+  </span>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+        {% endfor %}
+    {% endwith %}
+
+
+{% endblock %}
+
+

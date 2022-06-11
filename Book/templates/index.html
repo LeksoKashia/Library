@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+        {% for i in book_list %}
+<!--        <figure class="figure">-->
+<!--          <img src='{{values}}'  class="figure-img img-fluid rounded" alt="...">-->
+<!--          <<a style="color: #c1d7d7;margin-left: 20px;font-size: 40px;font-weight: bold " >{{keys}} </a>-->
+<!--        </figure>-->
+<!--        <br>-->
+        <div class="people-wrap">
+  <div class="people">
+    <a href="{{i[3]}}">
+      <img src="{{i[2]}}">
+    </a>
+  </div>
+  <div style="background: rgba(54,75,84,0)" class="card">
+    <p style="color: #c1d7d7;font-weight: bold;font-size: 20px;margin-top: 3%   " class="title">{{i[0]}}</p>
+    <a style="color: #c1d7d7;margin-left: 70px;font-size: 25px" class="name">{{i[1]}}</a>
+      <br>
+  </div>
+</div>
+
+        {% endfor %}
+
+
+
+
+
+
+{% endblock %}

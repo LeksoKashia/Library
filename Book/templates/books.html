@@ -1,0 +1,24 @@
+{%  extends 'base.html' %}
+ {% block title %} Biblusi {%  endblock %}
+
+{% block content %}
+<div class = "container">
+  <form action="https://www.biblusi.ge/search-result" method="get" class="search-bar">
+      <input type="text" placeholder="მოიძიე წიგნი" name = "q">
+      <button type="submit ">
+       <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDojMjcyODI5O308L3N0eWxlPjwvZGVmcz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS45NiAtMS45NikiPjxwYXRoIGNsYXNzPSJhIiBkPSJNMjEuNjY1LDIwLjI0OGwtMi44MjQtMi44MTRhOS41LDkuNSwwLDEsMC0xLjQwNywxLjQwN2wyLjgxNCwyLjgyNGExLDEsMCwxLDAsMS40MTctMS40MTdaTTQsMTEuNDc4YTcuNDgzLDcuNDgzLDAsMSwxLDcuNDgzLDcuNDgzQTcuNDgzLDcuNDgzLDAsMCwxLDQsMTEuNDc4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwKSIvPjwvZz48L3N2Zz4=">
+      </button>
+
+
+  </form>
+</div>
+
+{% if 'username' in session%}
+    <div class="footer">
+  <h2 style="color: #c5d7d7;margin-right: 40px;font-weight: bold">username: {{session['username']}} email: {{session['email']}}</h2>
+  <h2 style="color: #C5D7D7FF;margin-right: 40px;font-weight: bold" >address: {{session['address']}}</h2>
+  <h2 style="color: #C5D7D7FF;margin-right: 40px;font-weight: bold" >age: {{session['age']}} phone: {{session['phone']}}</h2>
+</div>
+    {%endif%}
+
+{% endblock %}

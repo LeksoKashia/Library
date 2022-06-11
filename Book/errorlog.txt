@@ -1,0 +1,52 @@
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Temo\PycharmProjects\flask3\Book\main.py", line 97, in home
+    return 3/0
+ZeroDivisionError: division by zero
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Temo\PycharmProjects\flask3\Book\main.py", line 97, in home
+    return 3/0
+ZeroDivisionError: division by zero
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Temo\PycharmProjects\flask3\Book\main.py", line 97, in home
+    return render_template('index.html',book_list=book_list1)
+ZeroDivisionError: division by zero
+Exception on /home [GET]
+Traceback (most recent call last):
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Temo\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\Temo\PycharmProjects\flask3\Book\main.py", line 97, in home
+    return render_template('index.html',book_list=book_list1)
+ZeroDivisionError: division by zero

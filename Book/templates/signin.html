@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h2 style="color: #c1d7d7;margin-left: 20px;font-size: 40px;font-weight: bold " >Sign in </h2>
+
+    <form method="post" style="width:50%; margin-left:20px;">
+        <label style="color: #c5d7d7">Insert Email</label>
+        <input style="background-color: #364b54;opacity: 40%;color:aliceblue" type="email" name="email" class="form-control mb-3 mt-3" placeholder="name@example.com" required >
+        <label style="color: #c1d7d7" >Insert Username</label>
+        <input style="background-color: #364b54;opacity: 40%;color:aliceblue" type="text" name="username" class="form-control mb-3 mt-3" placeholder="username"required >
+        <label style="color: #c1d7d7" >Insert Password</label>
+        <input style="background-color: #364b54;opacity: 40%;color:aliceblue" type="password" name="password" class="form-control mb-3 mt-3" placeholder="password"required>
+        <label style="color: #c1d7d7" >Insert Address</label>
+        <input style="background-color: #364b54;opacity: 40%;color:aliceblue" type="text" name="address" class="form-control mb-3 mt-3" placeholder="Your address">
+        <label style="color: #c1d7d7" for="quantity">Age (between 1 and 100):</label>
+        <input style="background-color: #364b54;opacity: 40%;color:aliceblue" type="number" id="quantity" name="age" class="form-control mb-3 mt-3" min="1" max="100"
+        placeholder="Your age">
+        <label style="color: #c1d7d7" for="phone">Insert your phone number:</label>
+        <input style="background-color: #364b54;opacity: 40%;color:aliceblue" type="tel" id="phone" name="phone" placeholder="Your phone">
+        <br>
+        <button style="background-color: #364b54;opacity: 40%;color:#c1d7d7;font-weight: bold" type="submit" class="btn btn-success mt-3">ავტორიზაცია</button>
+    </form>
+
+{% endblock %}

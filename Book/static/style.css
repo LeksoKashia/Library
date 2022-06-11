@@ -1,0 +1,106 @@
+body{
+    background-image:url(
+"https://wallpaperaccess.com/full/124383.jpg")
+}
+
+.footer {
+    background: rgba(48, 98, 98, 0.49);position: fixed;
+    bottom:0;
+    width: 100vw;
+    text-align: end;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 50%;
+  background-color: rgba(85, 85, 85, 0.47);
+  overflow: auto;margin-left: 400px;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: rgb(193, 215, 215);
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.container{
+    margin-left: 400px;
+    margin-top: 100px;
+
+}
+
+
+.search-bar{
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    backdrop-filter: blur(4px) saturate(100%);
+}
+
+
+
+.search-bar input{
+    background: transparent;
+    flex:1;
+    border:0;
+    outline:none;
+    padding:24px 20px;
+    font-size: 20px;
+    color: #cac7ff
+}
+::placeholder{
+    color:#cac7ff;
+}
+
+.search-bar button img{
+    width: 25px;
+    text-align: center;
+
+}
+.search-bar button{
+    border:0;
+    border-radius: 50%;
+    width: 50px;
+    height: 60px;
+    background: rgba(88, 98, 155, 0.51);
+    cursor: pointer;
+}
+.figure{
+  float: left;
+  width: 30%;
+  padding: 5px;
+
+}
+.people-wrap {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+img {
+  display: block
+  /* remove gap*/
+}
+
+
