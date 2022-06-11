@@ -93,8 +93,11 @@ for i in books:
 @app.route('/')
 @app.route('/home')
 def home():
-    book_list1 = book_list
-    return render_template('index.html',book_list=book_list1)
+    if 'username' not in session:
+        return render_template('signin.html')
+    else:
+        book_list1 = book_list
+        return render_template('index.html',book_list=book_list1)
 
 @app.route('/sign_in', methods=['POST', 'GET'])
 def sign_in():
