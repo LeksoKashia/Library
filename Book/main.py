@@ -12,7 +12,6 @@ from random import randrange
 import sqlite3
 # page = 1
 # while page < 2:
-#     t12 = ()
 #     tuple12 = ()
 #     book_href_list = []
 #     book_list = []
@@ -45,7 +44,7 @@ import sqlite3
 #                       price INTEGER,
 #                       img_url VARCHAR(300),
 #                       book_url VARCHAR(40))''')
-#
+
 # cursor.executemany("INSERT INTO Biblusi_books (book,price,img_url,book_url) VALUES (?,?,?,?)", book_list)
 #
 # conn.commit()
@@ -93,62 +92,74 @@ for i in books:
 @app.route('/')
 @app.route('/home')
 def home():
-    book_list1 = book_list
-    return render_template('index.html',book_list=book_list1)
+    if 'username' not in session:
+        return redirect(url_for('sign_in'))
+    else:
+        book_list1 = book_list
+        return render_template('index.html', book_list=book_list1)
 
 @app.route('/sign_in', methods=['POST', 'GET'])
 def sign_in():
-    if request.method == 'POST':
-        session.permanent = True
-        email = request.form['email']
-        username = request.form['username']
-        password = request.form['password']
-        address = request.form['address']
-        age = request.form['age']
-        phone = request.form['phone']
-        session['email'] = email
-        session['username'] = username
-        session['password'] = password
-        session['address'] = address
-        session['age'] = age
-        session['phone'] = phone
+    if "username" in session:
         return redirect(url_for('home'))
+    else:
+        if request.method == 'POST':
+            session.permanent = True
+            email = request.form['email']
+            username = request.form['username']
+            password = request.form['password']
+            address = request.form['address']
+            age = request.form['age']
+            phone = request.form['phone']
+            session['email'] = email
+            session['username'] = username
+            session['password'] = password
+            session['address'] = address
+            session['age'] = age
+            session['phone'] = phone
+            return redirect(url_for('home'))
 
-    return render_template('signin.html')
+        return render_template('signin.html')
 
 
 
 @app.route('/remove',methods=['POST','GET'])
 def remove():
-    if request.method == 'POST':
-        booke = request.form['book']
-        if booke == '':
-            flash('შეიტანეთ სათაური','error')
-        else:
-            Biblusi_books.query.filter_by(book=booke).delete()
-            db.session.commit()
-            flash('წარმატებით წაიშალა წიგნი','info')
+    if 'username' in session:
+        if request.method == 'POST':
+            booke = request.form['book']
+            if booke == '':
+                flash('შეიტანეთ სათაური','error')
+            else:
+                Biblusi_books.query.filter_by(book=booke).delete()
+                db.session.commit()
+                flash('წარმატებით წაიშალა წიგნი','info')
 
-    return render_template('remove.html')
+        return render_template('remove.html')
+    else:
+        return redirect(url_for('sign_in'))
 
 
 @app.route('/add',methods=['POST','GET'])
 def add():
-    if request.method == 'POST':
-        id = request.form['id']
-        b = request.form['book1']
-        p = request.form['price']
-        iu = request.form['img_url']
-        bu = request.form['book_url']
-        if id == '' or b == '' or p == '' or iu == '' or bu == '':
-            flash('აუცილებელია ყველა ველის შეტანა','danger')
-        elif not p.isdecimal():
-            flash("რიცხვია საჭირო ფასის ველში",'warning')
-        else:
-            b1 = Biblusi_books(id=id,book=b, price=float(p), img_url=iu, book_url=bu)
-            db.session.add(b1)
-            db.session.commit()
-            flash('წიგნი ატვირთულია','success')
+    if "username" in session:
+        if request.method == 'POST':
+            id = request.form['id']
+            b = request.form['book1']
+            p = request.form['price']
+            iu = request.form['img_url']
+            bu = request.form['book_url']
+            if id == '' or b == '' or p == '' or iu == '' or bu == '':
+                flash('აუცილებელია ყველა ველის შეტანა','danger')
+            elif not p.isdecimal():
+                flash("რიცხვია საჭირო ფასის ველში",'warning')
+            else:
+                b1 = Biblusi_books(id=id,book=b, price=float(p), img_url=iu, book_url=bu)
+                db.session.add(b1)
+                db.session.commit()
+                flash('წიგნი ატვირთულია','success')
+    else:
+        return redirect(url_for('sign_in'))
 
 
     return render_template('add.html')
@@ -161,13 +172,20 @@ def logout():
         session.pop('username')
         return render_template('logout.html')
     else:
-        abort(500)
+        abort(404)
 
 
 @app.route('/books', methods=['GET', 'POST'])
 def books():
-    return render_template('books.html')
+    if 'username' in session:
+        return render_template('books.html')
+    else:
+        return redirect(url_for('sign_in'))
 
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
+    
+    
+    
