@@ -8,4 +8,4 @@ To start with, i have authorization page, you can't see the site features withou
 
 <h2> Interested in more details? </h2>
 <h1>     ↓     </h1>
-<h3> <a href="http://leqso.pythonanywhere.com/sign_in" > Proceed on my site</a></h1>
+<h3> <a style="color: red" href="http://leqso.pythonanywhere.com/sign_in" > Proceed on my site</a></h1>
